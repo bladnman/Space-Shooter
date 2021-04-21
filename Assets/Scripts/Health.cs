@@ -17,7 +17,9 @@ public class Health : MonoBehaviour {
   [SerializeField] GameObject hitVFX;
   [SerializeField] float hitVFXDuration = 1f;
 
-
+  public float GetHealth() {
+    return health;
+  }
   public void ProcessHit(DamageDealer damageDealer) {
     health -= damageDealer.GetDamage();
     damageDealer.Hit();

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
   [SerializeField] float projectialSpeed = 8f;
   [SerializeField] GameObject projectilePrefab;
   [SerializeField] AudioClip shootSFX;
-  [SerializeField] float shootSFXVolume = 1.0f;
+  [SerializeField] [Range(0, 1)] float shootSFXVolume = 1.0f;
 
   Health health;
 

@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
   [SerializeField] float laserSpeed = 15f;
   [SerializeField] float laserFirePeriod = 0.1f;
   [SerializeField] AudioClip shootSFX;
-  [SerializeField] float shootSFXVolume = 1.0f;
+  [SerializeField] [Range(0, 1)] float shootSFXVolume = 1.0f;
 
   Coroutine firingCoroutine;
   Health health;
@@ -74,5 +74,10 @@ public class Player : MonoBehaviour {
     var damageDealer = other.gameObject.GetComponent<DamageDealer>();
     if (null == damageDealer) return;
     health.ProcessHit(damageDealer);
+
+    // did I die?
+    if (health.GetHealth() <= 0) {
+      FindObjectOfType<Level>().LoadGameOver();
+    }
   }
 }
