@@ -15,13 +15,11 @@ public class Player : MonoBehaviour {
   [SerializeField] [Range(0, 1)] float shootSFXVolume = 1.0f;
 
   Coroutine firingCoroutine;
-  Health health;
 
   float xMin, xMax;
   float yMin, yMax;
 
   void Start() {
-    health = GetComponent<Health>();
     SetUpMoveBoundaries();
   }
   void Update() {
@@ -64,20 +62,10 @@ public class Player : MonoBehaviour {
     var xDelta = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
     var yDelta = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
+    if (xDelta == 0 && yDelta == 0) return;
+
     var xNew = transform.position.x + xDelta;
     var yNew = transform.position.y + yDelta;
-
     transform.position = new Vector2(Mathf.Clamp(xNew, xMin, xMax), Mathf.Clamp(yNew, yMin, yMax));
-  }
-
-  private void OnTriggerEnter2D(Collider2D other) {
-    var damageDealer = other.gameObject.GetComponent<DamageDealer>();
-    if (null == damageDealer) return;
-    health.ProcessHit(damageDealer);
-
-    // did I die?
-    if (health.GetHealth() <= 0) {
-      FindObjectOfType<Level>().LoadGameOver();
-    }
   }
 }

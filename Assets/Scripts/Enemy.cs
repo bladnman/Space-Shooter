@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-  [SerializeField] float shotCounter;
   [SerializeField] float minTimeBetweenShots = 0.2f;
   [SerializeField] float maxTimeBetweenShots = 3f;
   [SerializeField] float projectialSpeed = 8f;
@@ -11,10 +10,9 @@ public class Enemy : MonoBehaviour {
   [SerializeField] AudioClip shootSFX;
   [SerializeField] [Range(0, 1)] float shootSFXVolume = 1.0f;
 
-  Health health;
+  float shotCounter;
 
   void Start() {
-    health = GetComponent<Health>();
     shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
   }
   void Update() {
@@ -39,11 +37,5 @@ public class Enemy : MonoBehaviour {
     // fire!
     var shot = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
     shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectialSpeed * -1);
-  }
-
-  private void OnTriggerEnter2D(Collider2D other) {
-    var damageDealer = other.gameObject.GetComponent<DamageDealer>();
-    if (null == damageDealer) return;
-    health.ProcessHit(damageDealer);
   }
 }
