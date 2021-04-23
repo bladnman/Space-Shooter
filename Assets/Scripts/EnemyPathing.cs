@@ -10,8 +10,10 @@ public class EnemyPathing : MonoBehaviour {
   int waypointIndex = 0;
 
   void Start() {
-    waypoints = waveConfig.GetWaypoints();
-    transform.position = waypoints[waypointIndex].position;
+    if (waveConfig) {
+      waypoints = waveConfig.GetWaypoints();
+      transform.position = waypoints[waypointIndex].position;
+    }
   }
   void Update() {
     Move();
@@ -21,6 +23,8 @@ public class EnemyPathing : MonoBehaviour {
   }
 
   void Move() {
+    if (!waveConfig) return;
+    if (waypoints == null || waypoints.Count < 1) return;
     // move through points
     if (waypointIndex <= waypoints.Count - 1) {
       var targetPos = waypoints[waypointIndex].position;

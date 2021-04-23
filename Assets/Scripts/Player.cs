@@ -15,14 +15,36 @@ public class Player : MonoBehaviour {
   [SerializeField] [Range(0, 1)] float shootSFXVolume = 1.0f;
 
   Coroutine firingCoroutine;
+  public HealthManager healthManager;
 
   float xMin, xMax;
   float yMin, yMax;
+  bool isDead = false;
 
   void Start() {
     SetUpMoveBoundaries();
+
+    healthManager = GetComponent<HealthManager>();
+    if (healthManager) {
+      healthManager.onHealthChanged += HandleHealthChange;
+    }
+
+
   }
+
+  private void HandleHealthChange(object sender, System.EventArgs e) {
+    if (healthManager.GetHealth() < 1) {
+      isDead = true;
+      SpriteRenderer rend = GetComponent<SpriteRenderer>();
+      rend.enabled = false;
+    }
+  }
+
+
   void Update() {
+
+    if (isDead) return;
+
     Move();
     Shoot();
   }

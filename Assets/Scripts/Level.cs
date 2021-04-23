@@ -9,6 +9,7 @@ public class Level : MonoBehaviour {
     SceneManager.LoadScene("Menu");
   }
   public void LoadGameScene() {
+    ResetGame();
     SceneManager.LoadScene("Game");
   }
   public void LoadGameOver() {
@@ -16,5 +17,12 @@ public class Level : MonoBehaviour {
   }
   public void QuitGame() {
     Application.Quit();
+  }
+
+  void ResetGame() {
+    var gameSession = FindObjectOfType<GameSession>();
+    if (gameSession) {
+      gameSession.scoreManager.Reset();
+    }
   }
 }

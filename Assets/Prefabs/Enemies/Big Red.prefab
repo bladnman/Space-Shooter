@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1163244651804273438}
   - component: {fileID: 7665421340217900250}
   - component: {fileID: 3464898465395602828}
-  - component: {fileID: -1729574881680721386}
   m_Layer: 9
   m_Name: Big Red
   m_TagString: Enemy Projectile
@@ -29,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6212130331959330261}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000026226041}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2946, y: 2.2946, z: 2.2946}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 5.1990423, y: 2.019772, z: 2.9922547}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,11 +71,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -715051409
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5b7f5e45d414957a6bedc1fb295e2f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9203761, b: 0.051886797, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,16 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba8ef6df5cb940d19724cb8d82acaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
---- !u!114 &-1729574881680721386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6212130331959330261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c28222dac65e04105bbf485f3e09a693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damage: 250

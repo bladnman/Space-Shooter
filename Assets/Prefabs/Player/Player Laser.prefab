@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2910636207464787815}
   - component: {fileID: 1246476099124325236}
   - component: {fileID: -4634619089137253555}
-  - component: {fileID: 8933997515239158720}
   - component: {fileID: 552662805734732731}
   m_Layer: 8
   m_Name: Player Laser
@@ -72,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -715051409
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0a54be3e148594b77845bd7008ddedcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -133,18 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09, y: 0.54}
   m_EdgeRadius: 0
---- !u!114 &8933997515239158720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4949469542988319476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c28222dac65e04105bbf485f3e09a693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &552662805734732731
 MonoBehaviour:
   m_ObjectHideFlags: 0

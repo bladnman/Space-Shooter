@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38adcd4fe730e4631a853f3737c6f19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectialSpeed: 6
   projectilePrefab: {fileID: 6212130331959330261, guid: 78b6663790c5e440580f8bc5acf55a0f, type: 3}
   shootSFX: {fileID: 8300000, guid: ef57f24ebfb9648dd9d644f6282e6c9a, type: 3}
   shootSFXVolume: 0.4
+  scoreValue: 125
 --- !u!114 &3047151683293604684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba8ef6df5cb940d19724cb8d82acaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 150
 --- !u!114 &7030243364332614505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,5 +215,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba68c8b7e26e24b2082bd041cf38988f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 200
-  currentHealth: 400
+  maxHealth: 200
+  minHealth: 0
